@@ -1,0 +1,105 @@
+@mixin breakpoint($point) {
+	@if $point == desktop {
+		@media (min-width: 70em) { @content ; }
+	}
+	@else if $point == laptop {
+		@media (min-width: 64em) { @content ; }
+	}
+	@else if $point == tablet {
+		@media (min-width: 50em) { @content ; }
+	}
+	@else if $point == phablet {
+		@media (min-width: 37.5em) { @content ; }
+	}
+	@else if $point == mobileonly {
+		@media (max-width: 37.5em) { @content ; }
+	}
+}
+*{
+	overflow-x: hidden;
+	font-family: 'Open Sans';
+	img{
+		max-width: 100%;
+	}
+}
+.section{
+	margin-bottom: 40px;
+}
+.title{
+	position: relative;
+	padding: 5px 0;
+	text-align:center;
+	font-weight: bold;
+	font-size: 30px;
+	&:after{
+		content:'';
+		position:absolute;
+		bottom: 0;
+		left:50%;
+		margin-left: -70px;
+		background: #fac012;
+		width: 140px;
+		height: 2px;
+
+	}
+}
+.logo{
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.menu{
+	display: none;
+	font-size:14px;
+	font-weight:bold;
+	@include breakpoint(phablet){
+		display: block;
+	}
+	a{
+		text-decoration: none;
+		color:#000;
+	}
+	padding: 20px 0;
+	text-transform: uppercase;
+	text-align: center;
+	ul{
+		list-style: none;
+	}
+	li{
+		margin:10px 10px;
+		@include breakpoint(phablet){
+			display: inline-block;
+		}
+	}
+	a:hover{
+		color:#fac012;
+	}
+
+}
+// menu
+.bars{
+	position: absolute;
+	right:0px;
+	top:33px;
+	width:30px;
+	@include breakpoint(phablet){
+		display: none;
+	};
+}
+.bar{
+  height:5px;
+  background:#333;
+  margin:4px 0;
+}
+.active .bar:nth-child(2){
+  opacity:0;
+}
+.active .bar:nth-child(1){
+  transform: rotate(45deg) translateY(4px) translateX(5px);
+}
+.active .bar:nth-child(3){
+  transform: rotate(-45deg) translateY(-8px) translateX(8px);
+}
+.header{
+	position: fixed;
+}

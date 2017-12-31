@@ -1,0 +1,109 @@
+@mixin breakpoint($point) {
+	@if $point == desktop {
+		@media (min-width: 70em) { @content ; }
+	}
+	@else if $point == laptop {
+		@media (min-width: 64em) { @content ; }
+	}
+	@else if $point == tablet {
+		@media (min-width: 50em) { @content ; }
+	}
+	@else if $point == phablet {
+		@media (min-width: 37.5em) { @content ; }
+	}
+	@else if $point == mobileonly {
+		@media (max-width: 37.5em) { @content ; }
+	}
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.wrapper{
+		margin: 0 auto;
+		max-width: 1200px;
+		padding: 0 10px;
+	@include breakpoint(phablet){
+		max-width: 700px;
+	}
+	@include breakpoint(tablet){
+		max-width: 1000px;
+	}
+}
+
+.clearfix{
+	&:after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+	&-phablet{
+		min-height: 1px;
+		clear: both;
+	}
+	&-tablet{
+		min-height: 1px;
+		clear: both;
+	}
+}
+
+
+.row{
+	margin: 0 -10px;
+	position: relative;
+}
+
+[class*='col-']{
+	padding: 0 10px;
+	min-height: 1px;
+
+}\
+
+.col-{
+	&phablet-{
+		@include breakpoint(phablet){
+			&1-2{
+				width: 50%;
+				float: left;
+			}
+			&1-3{
+				width: 33.33%;
+				float: left;
+			}
+			&1-4{
+				width: 25%;
+				float: left;
+				border: 1px solid red;
+			}
+			&2-3{
+				width: 66.66%;
+				float: left;
+			}
+			&3-4{
+				width: 75%;
+				float: left;
+				border: 1px solid red;
+			}
+		}
+	}
+
+	&tablet-{
+		@include breakpoint(tablet){
+			&1-3{
+				width: 33.33%;
+				float: left;
+			}
+			&3-4{
+				width: 75%;
+				float: left;
+			}
+			&1-4{
+				width: 25%;
+				float: left;
+			}
+		}
+	}
+}
