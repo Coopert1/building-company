@@ -6,4 +6,6 @@ $(function(){
 		{duration:300}
 	);
 	})
+
+	$('.block').css('height', $('block__pic').height());
 })
