@@ -2,7 +2,7 @@ html
 	head
 		include ./parts/head.pug
 	body
-		.wrapper.clearfix
+		.wrapper.clearfix.header
 			.col-phablet-1-4
 				.logo
 					a(href="#")
@@ -14,16 +14,21 @@ html
 			.col-phablet-3-4
 					.menu
 						ul
-							li
-								a(href="#") Ми
-							li 
-								a(href="#") продукція
-							li 
-								a(href="#") квартири
-							li 
-								a(href="#") наші переваги
-							li 
-								a(href="#") контакти
+							a(href="#")
+								li
+									|Ми
+							a(href="#")
+								li 
+									|продукція
+							a(href="#") 
+								li 
+									|квартири
+							a(href="#")
+								li 
+									|наші переваги
+							a(href="#")
+								li
+									|контакти
 		.header-slider
 			img(src="/images/header_main.jpg")
 		.wrapper

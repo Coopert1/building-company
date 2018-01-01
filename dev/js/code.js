@@ -1,9 +1,9 @@
 $(function(){
 	$('.bars').click(function(){
-		console.log(1);
 	  $(this).toggleClass('active');
-	  $(".menu").animate({
-		  height: 'toggle'
-		});
+	  $(".menu").animate(
+		{height: 'toggle'},
+		{duration:300}
+	);
 	})
 })
