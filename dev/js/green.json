@@ -1,0 +1,278 @@
+[
+  {
+    "_id": "5a39569382873075cbf52845",
+    "namber": 0,
+    "blacon": false,
+    "room": 1
+  },
+  {
+    "_id": "5a395693ce84fc2e377aa45a",
+    "namber": 1,
+    "blacon": true,
+    "room": 3
+  },
+  {
+    "_id": "5a3956938d6485bc540120c6",
+    "namber": 2,
+    "blacon": true,
+    "room": 5
+  },
+  {
+    "_id": "5a395693833d1528625406bb",
+    "namber": 3,
+    "blacon": true,
+    "room": 3
+  },
+  {
+    "_id": "5a39569329069df21773504a",
+    "namber": 4,
+    "blacon": false,
+    "room": 5
+  },
+  {
+    "_id": "5a395693088cfc50462c84a4",
+    "namber": 5,
+    "blacon": false,
+    "room": 5
+  },
+  {
+    "_id": "5a395693ad59578677b431f3",
+    "namber": 6,
+    "blacon": true,
+    "room": 3
+  },
+  {
+    "_id": "5a395693068dae3667139d07",
+    "namber": 7,
+    "blacon": true,
+    "room": 4
+  },
+  {
+    "_id": "5a395693f224324b72f1fb3f",
+    "namber": 8,
+    "blacon": false,
+    "room": 5
+  },
+  {
+    "_id": "5a39569324b4dac5c4e95939",
+    "namber": 9,
+    "blacon": false,
+    "room": 4
+  },
+  {
+    "_id": "5a395693399df27f88dd9c5b",
+    "namber": 10,
+    "blacon": false,
+    "room": 3
+  },
+  {
+    "_id": "5a395693063b8c4015dee2a3",
+    "namber": 11,
+    "blacon": false,
+    "room": 5
+  },
+  {
+    "_id": "5a3956933ed45f3aca216828",
+    "namber": 12,
+    "blacon": true,
+    "room": 1
+  },
+  {
+    "_id": "5a3956937e20efaaef8c2e24",
+    "namber": 13,
+    "blacon": true,
+    "room": 2
+  },
+  {
+    "_id": "5a395693e6031b9f535a3502",
+    "namber": 14,
+    "blacon": false,
+    "room": 2
+  },
+  {
+    "_id": "5a395693bca457416e103516",
+    "namber": 15,
+    "blacon": false,
+    "room": 3
+  },
+  {
+    "_id": "5a395693afa8127babf66f61",
+    "namber": 16,
+    "blacon": true,
+    "room": 3
+  },
+  {
+    "_id": "5a3956939210574fb7f652bf",
+    "namber": 17,
+    "blacon": false,
+    "room": 3
+  },
+  {
+    "_id": "5a395693ddfb3f88032dc5a9",
+    "namber": 18,
+    "blacon": false,
+    "room": 4
+  },
+  {
+    "_id": "5a395693a1876cdedd82e744",
+    "namber": 19,
+    "blacon": false,
+    "room": 4
+  },
+  {
+    "_id": "5a395693a62733e16f2f6560",
+    "namber": 20,
+    "blacon": false,
+    "room": 1
+  },
+  {
+    "_id": "5a39569342821baf8cc5db00",
+    "namber": 21,
+    "blacon": false,
+    "room": 5
+  },
+  {
+    "_id": "5a395693fb69dfc2e08b2a21",
+    "namber": 22,
+    "blacon": true,
+    "room": 2
+  },
+  {
+    "_id": "5a395693dfae5ea17267b864",
+    "namber": 23,
+    "blacon": false,
+    "room": 1
+  },
+  {
+    "_id": "5a395693877b57b6d101e68a",
+    "namber": 24,
+    "blacon": true,
+    "room": 3
+  },
+  {
+    "_id": "5a395693f9fef7ed4aeff685",
+    "namber": 25,
+    "blacon": true,
+    "room": 4
+  },
+  {
+    "_id": "5a3956937979b84c598526ea",
+    "namber": 26,
+    "blacon": true,
+    "room": 3
+  },
+  {
+    "_id": "5a395693f864c594cd5acd19",
+    "namber": 27,
+    "blacon": true,
+    "room": 2
+  },
+  {
+    "_id": "5a3956933b491d3f49e0fd98",
+    "namber": 28,
+    "blacon": true,
+    "room": 2
+  },
+  {
+    "_id": "5a3956931d1cd59cb12bb34c",
+    "namber": 29,
+    "blacon": true,
+    "room": 4
+  },
+  {
+    "_id": "5a3956937e1b027d302e3e85",
+    "namber": 30,
+    "blacon": false,
+    "room": 3
+  },
+  {
+    "_id": "5a39569376cca72e953d1001",
+    "namber": 31,
+    "blacon": false,
+    "room": 2
+  },
+  {
+    "_id": "5a39569391ee356b0d39d5cd",
+    "namber": 32,
+    "blacon": true,
+    "room": 3
+  },
+  {
+    "_id": "5a395693f45592b6ab3e39a4",
+    "namber": 33,
+    "blacon": false,
+    "room": 3
+  },
+  {
+    "_id": "5a3956930333e24743b2e1c5",
+    "namber": 34,
+    "blacon": false,
+    "room": 1
+  },
+  {
+    "_id": "5a3956933056f3691a2e2e12",
+    "namber": 35,
+    "blacon": false,
+    "room": 5
+  },
+  {
+    "_id": "5a395693e6ed58c5db503134",
+    "namber": 36,
+    "blacon": true,
+    "room": 3
+  },
+  {
+    "_id": "5a395693cf0a814759002a80",
+    "namber": 37,
+    "blacon": true,
+    "room": 1
+  },
+  {
+    "_id": "5a3956933ea72dba074715f4",
+    "namber": 38,
+    "blacon": true,
+    "room": 4
+  },
+  {
+    "_id": "5a3956936d606b6db6c36e1f",
+    "namber": 39,
+    "blacon": true,
+    "room": 1
+  },
+  {
+    "_id": "5a39569386ce87874f35a93d",
+    "namber": 40,
+    "blacon": true,
+    "room": 3
+  },
+  {
+    "_id": "5a395693e19cc880395e2699",
+    "namber": 41,
+    "blacon": false,
+    "room": 2
+  },
+  {
+    "_id": "5a39569313d6bf2020ee5a26",
+    "namber": 42,
+    "blacon": true,
+    "room": 2
+  },
+  {
+    "_id": "5a39569344ccc5fbbd9d2855",
+    "namber": 43,
+    "blacon": false,
+    "room": 1
+  },
+  {
+    "_id": "5a395693a259bb2f1a3f5fe3",
+    "namber": 44,
+    "blacon": true,
+    "room": 3
+  },
+  {
+    "_id": "5a395693fdcda2208e2cdcf8",
+    "namber": 45,
+    "blacon": true,
+    "room": 3
+  }
+]

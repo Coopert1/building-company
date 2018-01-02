@@ -106,17 +106,40 @@ html
 										|Обрати квартиру
 								
 		.advantages
-		.wrpapper
+		.wrapper
 			.section
 				.title
 					|Житловий масив
 				.row.clearfix
 					.col-phablet-1-2
+						.block__img
+							img(src='/images/building.png')
 					.col-phablet-1-2
-				.row.clearfix
-					.col-phablet-1-3
-					.col-phablet-1-3
-					.col-phablet-1-3
+						.block__filter
+							.block__filter__apartment Житловий масив “Затишок Дніпра ”
+							a.change.pull-rigth(href='#') змінити
+							.block__filter__flats
+								.option
+									div Квартира:
+									input#r1(type="radio" class="room_1" name="room")
+									label(for="r1")
+									input#r2(type="radio" class="room_2" name="room")
+									label(for="r2")
+									input#r3(type="radio" class="room_3" name="room")
+									label(for="r3")
+									input#r4(type="radio" class="room_4" name="room")
+									label(for="r4")
+									input#r5(type="radio" class="room_5" name="room")
+									label(for="r5")
+								.option
+									div Балкон:
+										input#balcon(type="checkbox" name="balcon" )
+										label(for="balcon")
+										span.for-balcon
+								.option
+									div Номер Квартири:
+								.flats
+								.btn Зв'язатись з менеджером
 		.advantages
 		.wrapper
 			.section
