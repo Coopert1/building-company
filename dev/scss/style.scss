@@ -22,6 +22,9 @@
 		max-width: 100%;
 	}
 }
+body{
+	background: #fafafa;
+}
 .section{
 	margin-bottom: 40px;
 }
@@ -31,6 +34,7 @@
 	text-align:center;
 	font-weight: bold;
 	font-size: 30px;
+	margin-bottom: 40px;
 	&:after{
 		content:'';
 		position:absolute;
@@ -75,7 +79,7 @@
 		padding: 20px 0;
 		text-decoration: none;
 		color:#000;
-		background: #fbfbfb;
+		background: #fff;
 		border-bottom: 0.5px solid rgba(200, 200, 200, 0.2);
 		@include breakpoint(phablet){
 			border: none;
@@ -106,7 +110,7 @@
 		// background: #fac012;
 		// transition: background 0.7s ease;
 		@include breakpoint(phablet){
-			background: #fff;
+			background: none;
 		}
 
 	}
@@ -158,14 +162,46 @@
 //menu burger end
 
 //block styles begin
+.block-list{
+	@include breakpoint(tablet){
+		margin: 0;
+		:nth-child(2n){
+			.block{
+				&__pic{
+					float: right;
+				}
+			}
+		}
+	}
+
+}
 .block{
+	background: #fff;
+	text-align: center;
+	margin-bottom: 20px;
+	padding: 20px;
+	@include breakpoint(phablet){
+		// min-height: 500px;
+		padding: 10px;
+		margin-bottom: 20px;
+	}
+	@include breakpoint(tablet){
+		padding: 0;
+		min-height: 0;
+		margin: 0;
+	}
+
 	&__pic{
-		display: block;
-		width: 50%;
-		float: left;
+		display: inline-block;
 		position: relative;
 		margin-bottom:10px;
+		@include breakpoint(tablet){
+			width:50%;
+			float: left;
+			margin-bottom: 0;
+		}
 		img {
+			position: relative;
 			opacity: 1;
 			display: block;
 			height: auto;
@@ -173,6 +209,7 @@
 			transition: .5s ease;
 			-webkit-backface-visibility: hidden;
 			backface-visibility: hidden;
+			z-index: 0;
 		}
 	}
 	&__pic:hover{
@@ -189,47 +226,81 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		padding: 1em;
 		color: #fff;
 		background: rgba(255,193,0,.8);
 		opacity: 0;
-		-webkit-transition: opacity .7s;
-		transition: opacity .7s;
+		-webkit-transition: opacity .4s;
+		transition: opacity .4s;
 		cursor: pointer;
-		font-size:32px;
-		text-transform: uppercase;
-		letter-spacing: 3px;
 		img{
-			margin: 36% auto;
-			width: 40px;
+			position: absolute;
+			top:50%;
+			left: 50%;
+			width: 50px;
+			height: auto;;
+			margin-top:-25px;
+			margin-left: -25px;
+
 		}
 	}
 	&__name{
 		color:#fac012;
-		font-size: 13px;
+		font-size: 16px;
 		font-weight: bold;
 		margin-bottom: 10px;
 	}
 	&__adress{
 		color:#0c2e3b;
-		font-size: 13px;
+		font-size: 14px;
 		margin-bottom: 10px;
 	}
 	&__flatsCount{
 		text-transform: uppercase;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
+		font-size: 13px;
 	}
 	&__description{
 		padding: 10px;
-		float: left;
-		width: 50%;
+		text-align: center;
+		@include breakpoint(phablet){
+			height: 200px;
+			text-align: left;
+			position: relative;
+		}
+		@include breakpoint(tablet){
+			min-height: 0;
+			&:after{
+				content: '';
+				position: absolute;
+				left:0;
+				top: 26px;
+				width: 0;
+				height: 0;
+				border-top: 13px solid transparent;
+				border-right: 26px solid red;
+				border-bottom: 13px solid transparent;
+			}
+		}
 	}
 }
 //block styles end
+
 .btn{
 	display: inline-block;
 	padding: 10px;
 	background: #0c2e3b;
 	color:#fff;
+	font-size: 14px;
 	border-radius: 2px;
+	&:hover{
+		color:#fac012;
+	}
+	&_block{
+		@include breakpoint(phablet){
+			display: block;
+			position: absolute;
+			bottom :10px;
+			left: 10px;
+		}
+	}
 }
