@@ -32,8 +32,11 @@ gulp.task('html', function(){
     	"pretty": true
   }))
   .pipe(gulp.dest('./app/'))
+  gulp.src('./dev/js/*.json')
+  	.pipe(gulp.dest('./app/js'))
   gulp.src('./dev/js/*.js')
 	  .pipe(watch ('./dev/js/*.js'))
+	  .pipe(watch ('./dev/js/*.json'))
     .pipe(plumber())
 	  .pipe(gulp.dest('./app/js'))
 });
