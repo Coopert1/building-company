@@ -607,3 +607,46 @@ body{
 		font-size: 30px;
 	}
 }
+// advantages
+.advantages{
+	text-align: center;
+	background: url('../images/advantages_bg_2.png');
+	padding: 70px 0;
+		&__title{
+			font-size: 30px;
+			display: inline-block;
+			width: 232px;
+			color: #fff;
+			margin: 10px;
+			:last-child{
+				text-transform: uppercase;
+				color:#fac012;
+			}
+		}
+}
+.advantage{
+	text-align: left;
+	position: relative;
+	display: inline-block;
+	background:#fac012;
+	padding: 30px 15px;
+	width: 232px;
+	padding-right: 40px;
+	margin: 10px;
+	:first-child{
+		font-size: 36px;
+		font-weight: bold;
+		color:#fff;
+		margin-bottom: 20px;
+	}
+	span{
+		color:#fff;
+		display: block;
+	}
+	img{
+		position: absolute;
+		right: 10px;
+		top:20px;
+	}
+
+}
