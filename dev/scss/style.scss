@@ -22,7 +22,7 @@
 	}
 }
 body{
-	background: #fafafa;
+	// background: #fafafa;
 }
 .pull-rigth{
 	float: right;
@@ -217,7 +217,7 @@ body{
 	margin-bottom: 20px;
 	padding: 20px;
 	@include breakpoint(phablet){
-		padding: 10px;
+		padding: 20px;
 		margin: 0 10px;
 		margin-bottom: 20px;
 	}
@@ -608,7 +608,7 @@ body{
 	}
 }
 // advantages
-.advantages{
+.uniqueness{
 	text-align: center;
 	background: url('../images/advantages_bg_2.png');
 	padding: 70px 0;
@@ -624,7 +624,7 @@ body{
 			}
 		}
 }
-.advantage{
+.unique{
 	text-align: left;
 	position: relative;
 	display: inline-block;
@@ -649,4 +649,54 @@ body{
 		top:20px;
 	}
 
+}
+
+
+//
+.advantage{
+	position: relative;
+	padding: 20px 10px 20px 70px;
+	border: 2px solid #fafafa;
+	&__icon{
+		position: absolute;
+		top:50%;
+		left:0;
+		margin-top: -15px;
+		display: inline-block;
+		background: #fafafa;
+		padding: 5px;
+	}
+	&__title{
+		font-weight: bold;
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	&__text{
+		font-size: 14px;
+		color:#afafaf;
+	}
+	&:hover{
+		border: 2px solid #fac012;
+		.advantage__icon{
+			background: #fac012;
+		}
+		.icon_graph{
+				background-position: 5px 2px;
+			}
+		.icon_star{
+				background-position: -26px 2px;
+			}
+	}
+}
+.icon{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background:url(../images/advantages_sprite.png);
+	&_graph{
+		background-position: 5px 30px;
+	}
+	&_star{
+		background-position: -26px 30px;
+	}
 }
