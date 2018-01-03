@@ -16,11 +16,13 @@
 	}
 }
 *{
-	overflow-x: hidden;
 	font-family: 'Open Sans';
 	img{
 		max-width: 100%;
 	}
+}
+body{
+	// background: #fafafa;
 }
 .pull-rigth{
 	float: right;
@@ -34,6 +36,7 @@
 	text-align:center;
 	font-weight: bold;
 	font-size: 30px;
+	margin-bottom: 40px;
 	&:after{
 		content:'';
 		position:absolute;
@@ -81,7 +84,7 @@
 		padding: 20px 0;
 		text-decoration: none;
 		color:#000;
-		background: #fbfbfb;
+		background: #fff;
 		border-bottom: 0.5px solid rgba(200, 200, 200, 0.2);
 		@include breakpoint(phablet){
 			border: none;
@@ -112,7 +115,7 @@
 		// background: #fac012;
 		// transition: background 0.7s ease;
 		@include breakpoint(phablet){
-			background: #fff;
+			background: none;
 		}
 
 	}
@@ -164,14 +167,81 @@
 //menu burger end
 
 //block styles begin
+.block-list{
+	@include breakpoint(tablet){
+		margin: 0;
+		:nth-child(2n){
+			.block{
+				&__pic{
+					float: right;
+				}
+				&__description{
+					position: relative;
+					width: 50%;
+					float: left;
+					&:after{
+						content: '';
+						position: absolute;
+						right:-59px;
+						top: 50%;
+						margin-top: -30px;
+						width: 0;
+						height: 0;
+						border: 30px solid transparent;
+						border-left : 30px solid #fff;
+						z-index: 999;
+					}
+				}
+			}
+		}
+		:nth-child(2n-1)
+		.block{
+			&__description{
+				&:after{
+					content: '';
+					position: absolute;
+					left:-59px;
+					top: 50%;
+					margin-top: -30px;
+					width: 0;
+					height: 0;
+					border: 30px solid transparent;
+					border-right : 30px solid #fff;
+					z-index: 999;
+				}
+			}
+		}
+	}
+
+}
 .block{
+	background: #fff;
+	text-align: center;
+	margin-bottom: 20px;
+	padding: 20px;
+	@include breakpoint(phablet){
+		padding: 20px;
+		margin: 0 10px;
+		margin-bottom: 20px;
+	}
+	@include breakpoint(tablet){
+		padding: 0;
+		min-height: 0;
+		margin: 0;
+	}
+
 	&__pic{
-		display: block;
-		width: 50%;
-		float: left;
+		display: inline-block;
 		position: relative;
 		margin-bottom:10px;
+		z-index: 0;
+		@include breakpoint(tablet){
+			width:50%;
+			float: left;
+			margin-bottom: 0;
+		}
 		img {
+			position: relative;
 			opacity: 1;
 			display: block;
 			height: auto;
@@ -179,6 +249,7 @@
 			transition: .5s ease;
 			-webkit-backface-visibility: hidden;
 			backface-visibility: hidden;
+			z-index: 0;
 		}
 	}
 	&__pic:hover{
@@ -194,50 +265,97 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		bottom: 0;
-		padding: 1em;
+		bottom:0;
 		color: #fff;
 		background: rgba(255,193,0,.8);
 		opacity: 0;
-		-webkit-transition: opacity .7s;
-		transition: opacity .7s;
+		-webkit-transition: opacity .4s;
+		transition: opacity .4s;
 		cursor: pointer;
-		font-size:32px;
-		text-transform: uppercase;
-		letter-spacing: 3px;
 		img{
-			margin: 36% auto;
-			width: 40px;
+			position: absolute;
+			top:50%;
+			left: 50%;
+			width: 50px;
+			height: auto;;
+			margin-top:-25px;
+			margin-left: -25px;
+
 		}
 	}
 	&__name{
 		color:#fac012;
-		font-size: 13px;
+		font-size: 16px;
 		font-weight: bold;
 		margin-bottom: 10px;
+		@media(min-width: 900px){
+			margin-bottom: 20px;
+		}
 	}
 	&__adress{
 		color:#0c2e3b;
-		font-size: 13px;
+		font-size: 15px;
 		margin-bottom: 10px;
+		@media(min-width: 900px){
+			margin-bottom: 20px;
+		}
 	}
 	&__flatsCount{
 		text-transform: uppercase;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
+		font-size: 15px;
+		@media(min-width: 900px){
+			margin-bottom: 20px;
+		}
 	}
 	&__description{
-		padding: 10px;
-		float: left;
-		width: 50%;
+		padding: 15px;
+		text-align: center;
+		@include breakpoint(phablet){
+			height: 200px;
+			text-align: center;
+			position: relative;
+			z-index: 3;
+		}
+		@include breakpoint(tablet){
+			text-align: left;
+			min-height: 0;
+			z-index: 3;
+			float: left;
+			width: 50%;
+		}
 	}
 }
 //block styles end
+
 .btn{
 	display: inline-block;
 	padding: 10px;
-	background: #0c2e3b;
-	color:#fff;
-	border-radius: 2px;
+	&_block{
+		background: #0c2e3b;
+		color:#fff;
+		font-size: 14px;
+		border-radius: 2px;
+		&:hover{
+			color:#fac012;
+		}
+		@include breakpoint(tablet){
+			display: block;
+			position: absolute;
+			bottom :15px;
+			left: 15px;
+		}
+	}
+	&_slider{
+		background: none;
+		font-size: 18px;
+		border: 2px solid #fafafa;
+		text-transform: uppercase;;
+		margin: 20px 0;
+		&:hover{
+			background: #fac012;
+		}
+	}
 }
 
 
@@ -247,9 +365,9 @@
 		color: #fac012;
 		font-size: 24px;
 		display: inline-block;
-		
+
 	}
-	
+
 	&__flats{
 		counter-reset: number;
 		.option{
@@ -258,10 +376,12 @@
 			padding-left: 90px;
 			>div{
 				margin-left: -90px;
+
 				display: inline-block;
 				
+
 			}
-			
+
 		}
 		span.for-balcon{
 			position: relative;
@@ -300,7 +420,7 @@
 						transform: translateY(-50%);
 					}
 				}
-				
+
 			}
 			&:checked{
 				& + label{
@@ -320,13 +440,13 @@
 					}
 				}
 			}
-			
-			
+
+
 			&+label{
 				position: relative;
 				color: #fac012;
 				display: inline-block;
-			
+
 				&:before{
 					content: "кімнат " counter(number);
 					counter-increment: number;
@@ -343,11 +463,11 @@
 					margin: 10px;
 					font-size: 14px;
 				}
-				
+
 			}
-			
+
 		}
-		
+
 		input[type='checkbox']{
 			&:not(checked){
 				position: absolute;
@@ -390,7 +510,7 @@
 					}
 				}
 			}
-						
+
 			&+label{
 				position: relative;
 				color: #fac012;
@@ -408,10 +528,10 @@
 					line-height: 30px;
 					margin: 10px;
 				}
-				
-				
+
+
 			}
-			
+
 		}
 	}
 	.flats{
@@ -429,12 +549,167 @@
 		width: 20px;
 		font-size: 14px;
 		font-weight: none;
+		height: 20px;
 		text-align: center;
 		margin: 2px;
 		&.active{
 			color: red;
 		}
-		
+
+	}
+}
+// End of filters block house
+
+//stats styles begin
+.stats{
+	text-align: center;
+	font-weight: bold;
+	color:#fff;
+	padding: 70px 0px;
+	background: url('../images/advantages_bg.png');
+	background-size: cover;
+	&__title{
+		font-size: 30px;
+		margin-bottom: 50px;
+		:nth-child(2){
+			color:#fac012;
+		}
+	}
+	&__text{
+		vertical-align: top;
+		display: inline-block;
+		font-weight: normal;
+		text-align: left;
+		font-size: 18px;
+		@include breakpoint(tablet){
+			font-size: 30px;
+		}
+		:first-child{
+			font-weight: bold;
+			color:#fac012;
+			font-size: 48px;
+		}
+	}
+	img{
+		display: inline-block;
+		margin-right: 10px;
+	}
+}
+//
+
+//slider styles
+.header-slider{
+	margin-bottom: 50px;
+}
+.slide{
+	position: relative;
+	background-size: cover;
+	text-align: center;
+	@include breakpoint(phablet){
+	}
+	&__info{
+		width: 660px;
+		margin: 0 auto;
+		position: absolute;
+		top:30%;
+		left: 50%;
+		margin-left: -330px;
+		display: inline-block;
+		color: #fff;
+		font-size: 30px;
+	}
+}
+// advantages
+.uniqueness{
+	text-align: center;
+	background: url('../images/advantages_bg_2.png');
+	padding: 70px 0;
+		&__title{
+			font-size: 30px;
+			display: inline-block;
+			width: 232px;
+			color: #fff;
+			margin: 10px;
+			:last-child{
+				text-transform: uppercase;
+				color:#fac012;
+			}
+		}
+}
+.unique{
+	text-align: left;
+	position: relative;
+	display: inline-block;
+	background:#fac012;
+	padding: 30px 15px;
+	width: 232px;
+	padding-right: 40px;
+	margin: 10px;
+	:first-child{
+		font-size: 36px;
+		font-weight: bold;
+		color:#fff;
+		margin-bottom: 20px;
+	}
+	span{
+		color:#fff;
+		display: block;
+	}
+	img{
+		position: absolute;
+		right: 10px;
+		top:20px;
+	}
+
+}
+
+
+//
+.advantage{
+	position: relative;
+	padding: 20px 10px 20px 70px;
+	border: 2px solid #fafafa;
+	&__icon{
+		position: absolute;
+		top:50%;
+		left:0;
+		margin-top: -15px;
+		display: inline-block;
+		background: #fafafa;
+		padding: 5px;
+	}
+	&__title{
+		font-weight: bold;
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	&__text{
+		font-size: 14px;
+		color:#afafaf;
+	}
+	&:hover{
+		border: 2px solid #fac012;
+		.advantage__icon{
+			background: #fac012;
+		}
+		.icon_graph{
+				background-position: 5px 2px;
+			}
+		.icon_star{
+				background-position: -26px 2px;
+			}
+	}
+}
+.icon{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background:url(../images/advantages_sprite.png);
+	&_graph{
+		background-position: 5px 30px;
+	}
+	&_star{
+		background-position: -26px 30px;
 	}
 }
 .var-planning{
