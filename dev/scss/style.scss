@@ -16,7 +16,6 @@
 	}
 }
 *{
-	overflow-x: hidden;
 	font-family: 'Open Sans';
 	img{
 		max-width: 100%;
@@ -173,6 +172,40 @@ body{
 				&__pic{
 					float: right;
 				}
+				&__description{
+					position: relative;
+					width: 50%;
+					float: left;
+					&:after{
+						content: '';
+						position: absolute;
+						right:-59px;
+						top: 50%;
+						margin-top: -30px;
+						width: 0;
+						height: 0;
+						border: 30px solid transparent;
+						border-left : 30px solid #fff;
+						z-index: 999;
+					}
+				}
+			}
+		}
+		:nth-child(2n-1)
+		.block{
+			&__description{
+				&:after{
+					content: '';
+					position: absolute;
+					left:-59px;
+					top: 50%;
+					margin-top: -30px;
+					width: 0;
+					height: 0;
+					border: 30px solid transparent;
+					border-right : 30px solid #fff;
+					z-index: 999;
+				}
 			}
 		}
 	}
@@ -184,8 +217,8 @@ body{
 	margin-bottom: 20px;
 	padding: 20px;
 	@include breakpoint(phablet){
-		// min-height: 500px;
 		padding: 10px;
+		margin: 0 10px;
 		margin-bottom: 20px;
 	}
 	@include breakpoint(tablet){
@@ -198,6 +231,7 @@ body{
 		display: inline-block;
 		position: relative;
 		margin-bottom:10px;
+		z-index: 0;
 		@include breakpoint(tablet){
 			width:50%;
 			float: left;
@@ -228,7 +262,7 @@ body{
 		top: 0;
 		left: 0;
 		right: 0;
-		bottom: 0;
+		bottom:0;
 		color: #fff;
 		background: rgba(255,193,0,.8);
 		opacity: 0;
@@ -251,38 +285,41 @@ body{
 		font-size: 16px;
 		font-weight: bold;
 		margin-bottom: 10px;
+		@media(min-width: 900px){
+			margin-bottom: 20px;
+		}
 	}
 	&__adress{
 		color:#0c2e3b;
-		font-size: 14px;
+		font-size: 15px;
 		margin-bottom: 10px;
+		@media(min-width: 900px){
+			margin-bottom: 20px;
+		}
 	}
 	&__flatsCount{
 		text-transform: uppercase;
 		margin-bottom: 10px;
-		font-size: 13px;
+		font-size: 15px;
+		@media(min-width: 900px){
+			margin-bottom: 20px;
+		}
 	}
 	&__description{
-		padding: 10px;
+		padding: 15px;
 		text-align: center;
 		@include breakpoint(phablet){
 			height: 200px;
-			text-align: left;
+			text-align: center;
 			position: relative;
+			z-index: 3;
 		}
 		@include breakpoint(tablet){
+			text-align: left;
 			min-height: 0;
-			&:after{
-				content: '';
-				position: absolute;
-				left:0;
-				top: 26px;
-				width: 0;
-				height: 0;
-				border-top: 13px solid transparent;
-				border-right: 26px solid red;
-				border-bottom: 13px solid transparent;
-			}
+			z-index: 3;
+			float: left;
+			width: 50%;
 		}
 	}
 }
@@ -291,19 +328,29 @@ body{
 .btn{
 	display: inline-block;
 	padding: 10px;
-	background: #0c2e3b;
-	color:#fff;
-	font-size: 14px;
-	border-radius: 2px;
-	&:hover{
-		color:#fac012;
-	}
 	&_block{
-		@include breakpoint(phablet){
+		background: #0c2e3b;
+		color:#fff;
+		font-size: 14px;
+		border-radius: 2px;
+		&:hover{
+			color:#fac012;
+		}
+		@include breakpoint(tablet){
 			display: block;
 			position: absolute;
-			bottom :10px;
-			left: 10px;
+			bottom :15px;
+			left: 15px;
+		}
+	}
+	&_slider{
+		background: none;
+		font-size: 18px;
+		border: 2px solid #fafafa;
+		text-transform: uppercase;;
+		margin: 20px 0;
+		&:hover{
+			background: #fac012;
 		}
 	}
 }
@@ -315,9 +362,9 @@ body{
 		color: #fac012;
 		font-size: 24px;
 		display: inline-block;
-		
+
 	}
-	
+
 	&__flats{
 		counter-reset: number;
 		.option{
@@ -326,9 +373,9 @@ body{
 			padding-left: 90px;
 			>div{
 				margin-left: -90px;
-				
+
 			}
-			
+
 		}
 		span.for-balcon{
 			position: relative;
@@ -367,7 +414,7 @@ body{
 						transform: translateY(-50%);
 					}
 				}
-				
+
 			}
 			&:checked{
 				& + label{
@@ -387,13 +434,13 @@ body{
 					}
 				}
 			}
-			
-			
+
+
 			&+label{
 				position: relative;
 				color: #fac012;
 				display: inline-block;
-			
+
 				&:before{
 					content: "кімнат " counter(number);
 					counter-increment: number;
@@ -410,11 +457,11 @@ body{
 					margin: 10px;
 					font-size: 14px;
 				}
-				
+
 			}
-			
+
 		}
-		
+
 		input[type='checkbox']{
 			&:not(checked){
 				position: absolute;
@@ -457,7 +504,7 @@ body{
 					}
 				}
 			}
-						
+
 			&+label{
 				position: relative;
 				color: #fac012;
@@ -475,10 +522,10 @@ body{
 					line-height: 30px;
 					margin: 10px;
 				}
-				
-				
+
+
 			}
-			
+
 		}
 	}
 	.house-yellow{
@@ -491,16 +538,72 @@ body{
 		display: inline-block;
 		width: 20px;
 		height: 20px;
-		
+
 		text-align: center;
 		margin: 2px;
-		
-
 		&.active{
 			color: red;
 		}
-		
+	}
+}
+// End of filters block house
 
+//stats styles begin
+.stats{
+	text-align: center;
+	font-weight: bold;
+	color:#fff;
+	padding: 70px 0px;
+	background: url('../images/advantages_bg.png');
+	background-size: cover;
+	&__title{
+		font-size: 30px;
+		margin-bottom: 50px;
+		:nth-child(2){
+			color:#fac012;
+		}
+	}
+	&__text{
+		vertical-align: top;
+		display: inline-block;
+		font-weight: normal;
+		text-align: left;
+		font-size: 18px;
+		@include breakpoint(tablet){
+			font-size: 30px;
+		}
+		:first-child{
+			font-weight: bold;
+			color:#fac012;
+			font-size: 48px;
+		}
+	}
+	img{
+		display: inline-block;
+		margin-right: 10px;
+	}
+}
+//
 
+//slider styles
+.header-slider{
+	margin-bottom: 50px;
+}
+.slide{
+	position: relative;
+	background-size: cover;
+	text-align: center;
+	@include breakpoint(phablet){
+	}
+	&__info{
+		width: 660px;
+		margin: 0 auto;
+		position: absolute;
+		top:30%;
+		left: 50%;
+		margin-left: -330px;
+		display: inline-block;
+		color: #fff;
+		font-size: 30px;
 	}
 }
