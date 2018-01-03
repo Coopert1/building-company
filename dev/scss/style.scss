@@ -712,9 +712,13 @@ body{
 		background-position: -26px 30px;
 	}
 }
+.planing-img{
+	
+	height: 270px;
+	
+}
 .var-planning{
 	margin: 40px 0 100px 0;
-	
 }
 h2{
 	margin-bottom: 55px;
@@ -737,7 +741,7 @@ h2{
 		}
 		&:last-child{
 			font-size: 12px;
-			padding-bottom: 10px;
+			//padding-bottom: 20px;
 		}
 	}
 }
