@@ -16,7 +16,7 @@
 	}
 }
 *{
-	font-family: 'Open Sans';
+	font-family: 'Open Sans', sans-serif;
 	img{
 		max-width: 100%;
 	}
@@ -390,14 +390,14 @@ body{
 
 	&__flats{
 		counter-reset: number;
-		
+
 		.option{
 			font-size: 18px;
 			padding-left: 90px;
-			
+
 			>div{
 				margin-left: -90px;
-				
+
 
 			}
 
@@ -561,9 +561,9 @@ body{
 	}
 }
 planing-img{
-	
+
 	height: 270px;
-	
+
 }
 .var-planning{
 	margin: 40px 0 100px 0;
@@ -589,7 +589,7 @@ h2{
 		}
 		&:not(:first-child){
 			color: #fac012;
-			
+
 		}
 		&:last-child{
 			font-size: 12px;
@@ -807,7 +807,7 @@ h2{
 		margin-bottom: 20px;
 	}
 	&__contacts{
-		
+
 		&__name{
 			text-transform: uppercase;
 			display: inline-block;
@@ -858,7 +858,7 @@ h2{
 					top: -10px;
 				}
 			}
-			
+
 		}
 		a{
 			margin: 5px 0;
@@ -947,5 +947,7 @@ form{
 	}
 
 
+
 }
+
 
