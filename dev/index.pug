@@ -245,7 +245,6 @@ html
 								|Переможці тендерів
 							.advantage__text
 								|Вже давно відомо, що читабельний зміст буде заважати зосередитись людині, яка оцінює композицію сторінки.
-						
 					.col-phablet-1-2.col-tablet-1-3
 							.advantage
 								.advantage__icon
@@ -279,10 +278,22 @@ html
 							.advantage__text
 								|Вже давно відомо, що читабельний зміст буде заважати зосередитись людині, яка оцінює композицію сторінки.
 		.mapwrapper
-			form(id="", method="", action="")
-				input(type="text")
-				input(type="text")
 			#map
+			.wrapper
+				form(id="", method="", action="")
+					span НАДІСЛАТИ ПОВІДОМЛЕННЯ
+					.row.clearfix
+						.col-phablet-1-2
+							input(type="text",name="name",placeholder="Ваше ім'я")
+						.col-phablet-1-2
+							input(type="text",name="mail", placeholder="Ваш Email")
+						.col-phablet-1-2
+							input(type="text",name="tel",placeholder="Телефон")
+						.col-phablet-1-2
+							input(type="text",name="theme",placeholder="Оберіть тему")
+					textarea(name="message",placeholder="Напишіть текст...")
+					button.btn.btn_send(type="submit")
+						|Надіслати листа
 		.footer
 			.wrapper
 				.row.clearfix
