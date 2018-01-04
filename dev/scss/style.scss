@@ -645,18 +645,24 @@ h2{
 	position: relative;
 	background-size: cover;
 	text-align: center;
-	@include breakpoint(phablet){
-	}
 	&__info{
-		width: 660px;
-		margin: 0 auto;
-		position: absolute;
-		top:30%;
-		left: 50%;
-		margin-left: -330px;
-		display: inline-block;
-		color: #fff;
-		font-size: 30px;
+		color: #000;
+		font-size: 18px;
+		margin-top: 20px;
+	}
+	@include breakpoint(phablet){
+		&__info{
+		
+
+			position: absolute;
+			top:25%;
+			//left: 50%;
+			left: 0;
+			right: 0;
+			//display: inline-block;
+			color: #fff;
+			font-size: 25px;
+		}
 	}
 }
 // advantages
@@ -761,6 +767,11 @@ h2{
 	background-color: #272727;
 	font-size: 14px;
 	padding: 20px 10px 0 10px;
+	text-align: center;
+	@include breakpoint(phablet){
+		text-align: left;
+	}
+	
 	&__rights{
 		text-align: center;
 		padding: 30px 0;
@@ -771,8 +782,11 @@ h2{
 		display: block;
 		color: inherit;
 		text-decoration: none;
-		margin-bottom: 20px;
-
+		margin-bottom: 10px;
+		@include breakpoint(phablet){
+			margin-bottom: 20px;
+		}
+		
 		&:hover{
 			color:#fac012;
 		}
@@ -782,19 +796,28 @@ h2{
 		margin-bottom: 25px;
 		border-bottom: 2px solid #fac012;
 		display: inline-block;
-		padding-bottom: 20px;
+		@include breakpoint(phablet){
+			padding-bottom: 20px;
+		}
+		
+		
 	}
 	&__text{
 		margin-top: 25px;
+		margin-bottom: 20px;
 	}
 	&__contacts{
 
 		&__name{
 			text-transform: uppercase;
 			display: inline-block;
-			float: left;
+			@include breakpoint(phablet){
+				float: left;
+			}
+			
 			&.adress{
 				position:relative;
+				
 				&:before{
 					content: '';
 					display: inline-block;
@@ -804,6 +827,7 @@ h2{
 					background-position: 0px 1px;
 					position: absolute;
 					left: -37px;
+					top: -10px;
 				}
 			}
 			&.phone{
@@ -817,6 +841,7 @@ h2{
 					background-position: -26px 1px;
 					position: absolute;
 					left: -40px;
+					top: -10px;
 				}
 			}
 			&.email{
@@ -830,14 +855,19 @@ h2{
 					background-position: -56px 1px;
 					position: absolute;
 					left: -37px;
+					top: -10px;
 				}
 			}
 
 		}
 		a{
+			margin: 5px 0;
 			display: block;
-			margin-left: 75px;
-			margin-bottom: 15px;
+			@include breakpoint(phablet){
+				margin-left: 75px;
+				margin-bottom: 15px;
+			}
+			
 		}
 	}
 }
@@ -916,4 +946,8 @@ form{
 		}
 	}
 
+
+
 }
+
+
