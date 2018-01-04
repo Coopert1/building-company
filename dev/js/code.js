@@ -82,24 +82,15 @@ $(function(){
 		$( "ul" ).find('.active').removeClass('active');
 
 		if($("input[type='radio']").hasClass('act')){
-
 			
-			//$("input[type='radio']").click();
-			main.click();
-		
-			
-						
-
+			$("input[type='radio']").click();
 		} else if($(this).prop('checked')){
 			$( "ul" ).find('.balcon_true').addClass('active');
 		}
-
-
-
 	});
 
 	
-	var main = $("input[type='radio']").click(function(){
+	
 
 	$("input[type='radio']").click(function(){
 
@@ -118,7 +109,9 @@ $(function(){
 		
 		
 	});
-})
+	
+});
+	
 	function initMap() {
 		var uluru = {lat:48.9212484, lng: 24.7164213};
 		var mark_in_map = new google.maps.LatLng(48.9188881,24.7174895);
