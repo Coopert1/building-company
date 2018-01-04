@@ -747,6 +747,9 @@ h2{
 	background-color: #272727;
 	font-size: 14px;
 	padding: 20px 10px 70px 10px;
+	&__rights{
+		text-align: center;
+	}
 	a{
 		display: block;
 		color: inherit;
@@ -773,6 +776,20 @@ h2{
 			text-transform: uppercase;
 			display: inline-block;
 			float: left;
+			&.adress{
+				position:relative;
+				&:before{
+					content: '';
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					background-image: url(/images/advantages_sprite.png);
+					background-position: -29px 30px;
+					position: absolute;
+					left: -27px;
+				}
+			}
+			
 		}
 		span{
 			display: block;
