@@ -82,8 +82,11 @@ $(function(){
 		$( "ul" ).find('.active').removeClass('active');
 		
 		if($("input[type='radio']").hasClass('act')){
-			$("input[type='radio']").click();
-			console.log('ok')
+			
+			//$("input[type='radio']").click();
+			main.click();
+		
+			
 						
 		} else if($(this).prop('checked')){
 			$( "ul" ).find('.balcon_true').addClass('active');
@@ -92,8 +95,9 @@ $(function(){
 			
 		
 	});
+
 	
-	$("input[type='radio']").click(function(){
+	var main = $("input[type='radio']").click(function(){
 		$( "ul" ).find('.active').removeClass('active act');
 		var cls = '.' + $(this).prop("class");
 		$("input[type='radio']").removeClass('act');
@@ -106,6 +110,8 @@ $(function(){
 		} else{
 			$( "ul" ).find(cls).addClass('active act');
 		}
+		
+		
 	});
 	
 })

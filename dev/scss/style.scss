@@ -331,6 +331,15 @@ body{
 .btn{
 	display: inline-block;
 	padding: 10px;
+	&__manager{
+		background: #0c2e3b;
+		color:#fff;
+		font-size: 14px;
+		border-radius: 2px;
+		&:hover{
+			color:#fac012;
+		}
+	}
 	&_block{
 		background: #0c2e3b;
 		color:#fff;
@@ -361,23 +370,24 @@ body{
 
 // Start filters block house
 .block__filter{
+	font-weight: bolder;
 	&__apartment{
 		color: #fac012;
 		font-size: 24px;
 		display: inline-block;
+		margin-bottom: 30px;
 
 	}
 
 	&__flats{
 		counter-reset: number;
+		
 		.option{
 			font-size: 18px;
-			font-weight: bolder;
 			padding-left: 90px;
+			
 			>div{
 				margin-left: -90px;
-
-				display: inline-block;
 				
 
 			}
@@ -387,16 +397,16 @@ body{
 			position: relative;
 			&:after{
 				content: '';
-				width: 45px;
+				width: 40px;
 				height: 15px;
-				background-color: white;
 				display: inline-block;
 				border-radius: 15px;
+				border: 2px solid #d0d0d0;
 				vertical-align: middle;
 				cursor: pointer;
 				position: absolute;
 				left: -65px;
-				top: 50%;
+				top: 60%;
 				transform: translateY(-50%);
 			}
 		}
@@ -404,12 +414,13 @@ body{
 			&:not(checked){
 				position: absolute;
 				opacity: 0;
+				visibility: hidden;
 				& + label{
 					&:after{
 						content: '';
 						width: 15px;
 						height: 15px;
-						background-color: white;
+						border: 2px solid #d0d0d0;
 						display: inline-block;
 						border-radius: 15px;
 						vertical-align: middle;
@@ -425,18 +436,8 @@ body{
 			&:checked{
 				& + label{
 					&:after{
-						content: '';
-						width: 15px;
-						height: 15px;
 						background-color: #fac012;
-						display: inline-block;
-						border-radius: 15px;
-						vertical-align: middle;
-						cursor: pointer;
-						position: absolute;
-						left: 20px;
-						top: 50%;
-						transform: translateY(-50%);
+						border: 2px solid #fac012;
 					}
 				}
 			}
@@ -444,16 +445,14 @@ body{
 
 			&+label{
 				position: relative;
-				color: #fac012;
 				display: inline-block;
 
 				&:before{
-					content: "кімнат " counter(number);
+					content: counter(number) " кім.";
 					counter-increment: number;
 					width: 90px;
 					height: 30px;
-					color: white;
-					background-color: #000000;
+					border: 2px solid #d0d0d0;
 					display: inline-block;
 					border-radius: 15px;
 					vertical-align: middle;
@@ -472,19 +471,20 @@ body{
 			&:not(checked){
 				position: absolute;
 				opacity: 0;
+				visibility: hidden;
 				& + label{
 					&:after{
 						content: '';
 						width: 20px;
 						height: 20px;
-						background-color: grey;
+						background-color: #d0d0d0 ;
 						display: inline-block;
 						border-radius: 10px;
 						vertical-align: middle;
 						cursor: pointer;
 						position: absolute;
 						right: 50px;
-						top: 50%;
+						top: 60%;
 						transform: translateY(-50%);
 						z-index: 5;
 						transition: all .5s;
@@ -494,34 +494,23 @@ body{
 			&:checked{
 				& + label{
 					&:after{
-						content: '';
-						width: 20px;
-						height: 20px;
 						background-color:  #fac012;
-						display: inline-block;
-						border-radius: 10px;
-						vertical-align: middle;
-						cursor: pointer;
-						position: absolute;
 						right: 18px;
-						top: 50%;
+						top: 60%;
 						transform: translateY(-50%);
-						z-index: 5;
 					}
 				}
 			}
 
 			&+label{
 				position: relative;
-				color: #fac012;
 				&:before{
 					content: "";
 					width: 90px;
 					height: 30px;
-					color: white;
-					background-color: #000000;
 					display: inline-block;
 					border-radius: 15px;
+					border: 2px solid #d0d0d0;
 					vertical-align: middle;
 					cursor: pointer;
 					padding-left: 30px;
@@ -536,6 +525,7 @@ body{
 	}
 	.flats{
 		margin-bottom: 8vw;
+		margin-top: 20px;
 	}
 	.house-yellow{
 		display: none;
@@ -549,13 +539,49 @@ body{
 		width: 20px;
 		font-size: 14px;
 		font-weight: none;
-		height: 20px;
+		height: 22px;
+		width: 22px;
+		border: 2px solid #d0d0d0;
+		line-height: 18px;
 		text-align: center;
 		margin: 2px;
 		&.active{
-			color: red;
+			border-color: #fac012;
 		}
 
+	}
+}
+planing-img{
+	
+	height: 270px;
+	
+}
+.var-planning{
+	margin: 40px 0 100px 0;
+}
+h2{
+	margin-bottom: 55px;
+	margin-top: 60px;
+}
+.flat-name{
+	color: #8c8c8c;
+	font-size: 24px;
+	margin-top: 60px;
+	margin-bottom: 22px;
+}
+.flat-area{
+	font-weight: bold;
+	font-size: 24px;
+	margin-bottom: 60px;
+	span{
+		display: inline-block;
+		&:not(:first-child){
+			color: #fac012;
+		}
+		&:last-child{
+			font-size: 12px;
+			//padding-bottom: 20px;
+		}
 	}
 }
 // End of filters block house
@@ -595,7 +621,7 @@ body{
 		margin-right: 10px;
 	}
 }
-//
+
 
 //slider styles
 .header-slider{
@@ -712,38 +738,3 @@ body{
 		background-position: -26px 30px;
 	}
 }
-.planing-img{
-	
-	height: 270px;
-	
-}
-.var-planning{
-	margin: 40px 0 100px 0;
-}
-h2{
-	margin-bottom: 55px;
-	margin-top: 60px;
-}
-.flat-name{
-	color: #8c8c8c;
-	font-size: 24px;
-	margin-top: 60px;
-	margin-bottom: 22px;
-}
-.flat-area{
-	font-weight: bold;
-	font-size: 24px;
-	margin-bottom: 60px;
-	span{
-		display: inline-block;
-		&:not(:first-child){
-			color: #fac012;
-		}
-		&:last-child{
-			font-size: 12px;
-			//padding-bottom: 20px;
-		}
-	}
-}
-
-// End filters block house
