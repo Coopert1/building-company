@@ -18,7 +18,7 @@ $(function(){
 		{duration:300}
 	);
 	})
-	
+
 	//this part for flats filter
 	$(".block__filter__apartment" ).change(function() {
 		var selectOpt = $(this).text();
@@ -31,9 +31,9 @@ $(function(){
 				$('.house-yellow').show();
 			}
 	});
-	
-	
-	
+
+
+
 	var arr_Green =$.ajax({
 		url: "js/green.json",
 		dataType: "json",
@@ -41,21 +41,21 @@ $(function(){
 		catch: false,
 		success: function(data){
 			var items = [];
-			
+
 			$(data).each(function(i, value){
 
 				items.push('<li class="'+ "room_" + value.room + " balcon_" + value.blacon +'  ">' +value.namber + '</li>');
-				
+
 			})
 
 			$('<ul/>', {
 				'class': 'house-green',
 				html: items.join('')
 			 }).appendTo(".flats");
-			
+
 		}
 	});
-	
+
 	var arr_Yellow =$.ajax({
 		url: "js/yellow.json",
 		dataType: "json",
@@ -63,55 +63,75 @@ $(function(){
 		catch: false,
 		success: function(data){
 			var items = [];
-			
+
 			$(data).each(function(i, value){
 
 				items.push('<li class="'+ "room_" + value.room + " balcon_" + value.blacon +'  ">' +value.namber + '</li>');
-				
+
 			})
 
 			$('<ul/>', {
 				'class': 'house-yellow',
 				html: items.join('')
 			 }).appendTo(".flats");
-			
+
 		}
 	});
-	
+
 	$("#balcon").click(function(){
 		$( "ul" ).find('.active').removeClass('active');
-		
+
 		if($("input[type='radio']").hasClass('act')){
+
 			
 			//$("input[type='radio']").click();
 			main.click();
 		
 			
 						
+
 		} else if($(this).prop('checked')){
 			$( "ul" ).find('.balcon_true').addClass('active');
 		}
-		
-			
-		
+
+
+
 	});
 
 	
 	var main = $("input[type='radio']").click(function(){
+
+	$("input[type='radio']").click(function(){
+
 		$( "ul" ).find('.active').removeClass('active act');
 		var cls = '.' + $(this).prop("class");
 		$("input[type='radio']").removeClass('act');
 		$(this).addClass('act');
 		console.log(cls);
-		
+
 		if($("#balcon").prop('checked')){
 			$( "ul" ).find('.balcon_true'+ cls).addClass('active');
-			
+
 		} else{
 			$( "ul" ).find(cls).addClass('active act');
 		}
 		
 		
 	});
-	
 })
+	function initMap() {
+		var uluru = {lat:48.9212484, lng: 24.7164213};
+		var mark_in_map = new google.maps.LatLng(48.9188881,24.7174895);
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 16,
+			center: uluru
+		});
+		var marker = new google.maps.Marker({
+			position: mark_in_map,
+			map: map,
+			icon:{
+				url: "images/pin.png",
+				ScaledSize: new google.maps.Size(16, 16)
+				}
+		});
+	}
