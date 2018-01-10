@@ -82,15 +82,11 @@ $(function(){
 		$( "ul" ).find('.active').removeClass('active');
 
 		if($("input[type='radio']").hasClass('act')){
-			
 			$("input[type='radio']").click();
 		} else if($(this).prop('checked')){
 			$( "ul" ).find('.balcon_true').addClass('active');
 		}
 	});
-
-	
-	
 
 	$("input[type='radio']").click(function(){
 
@@ -106,11 +102,32 @@ $(function(){
 		} else{
 			$( "ul" ).find(cls).addClass('active act');
 		}
-		
-		
 	});
 	
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 480 || document.documentElement.scrollTop > 480) {
+			document.getElementById("btn__up").style.display = "inline-block";
+		} else {
+			document.getElementById("btn__up").style.display = "none";
+		}
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+		document.body.scrollTop = 0; // For Safari
+		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	}
+	
+	document.getElementById("btn__up").onclick = topFunction;
+	
+
+	
 });
+	
+	
 	
 	function initMap() {
 		var uluru = {lat:48.9191304, lng: 24.7138400};
