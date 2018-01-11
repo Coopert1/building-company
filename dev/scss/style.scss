@@ -410,7 +410,7 @@ body{
 				height: 15px;
 				display: inline-block;
 				border-radius: 15px;
-				border: 2px solid #d0d0d0;
+				border: 1px solid #d0d0d0;
 				vertical-align: middle;
 				cursor: pointer;
 				position: absolute;
@@ -429,7 +429,7 @@ body{
 						content: '';
 						width: 15px;
 						height: 15px;
-						border: 2px solid #d0d0d0;
+						border: 1px solid #d0d0d0;
 						display: inline-block;
 						border-radius: 15px;
 						vertical-align: middle;
@@ -446,7 +446,7 @@ body{
 				& + label{
 					&:after{
 						background-color: #fac012;
-						border: 2px solid #fac012;
+						border: 1px solid #fac012;
 					}
 				}
 			}
@@ -459,9 +459,9 @@ body{
 				&:before{
 					content: counter(number) " кім.";
 					counter-increment: number;
-					width: 90px;
+					width: 45px;
 					height: 30px;
-					border: 2px solid #d0d0d0;
+					border: 1px solid #d0d0d0;
 					display: inline-block;
 					border-radius: 15px;
 					vertical-align: middle;
@@ -515,11 +515,11 @@ body{
 				position: relative;
 				&:before{
 					content: "";
-					width: 90px;
+					width: 60px;
 					height: 30px;
 					display: inline-block;
 					border-radius: 15px;
-					border: 2px solid #d0d0d0;
+					border: 1px solid #d0d0d0;
 					vertical-align: middle;
 					cursor: pointer;
 					padding-left: 30px;
@@ -550,7 +550,7 @@ body{
 		font-weight: none;
 		height: 22px;
 		width: 22px;
-		border: 2px solid #d0d0d0;
+		border: 1px solid #d0d0d0;
 		line-height: 18px;
 		text-align: center;
 		margin: 2px;
@@ -652,7 +652,7 @@ h2{
 	}
 	@include breakpoint(phablet){
 		&__info{
-		
+
 
 			position: absolute;
 			top:25%;
@@ -771,7 +771,7 @@ h2{
 	@include breakpoint(phablet){
 		text-align: left;
 	}
-	
+
 	&__rights{
 		text-align: center;
 		padding: 30px 0;
@@ -786,7 +786,7 @@ h2{
 		@include breakpoint(phablet){
 			margin-bottom: 20px;
 		}
-		
+
 		&:hover{
 			color:#fac012;
 		}
@@ -799,8 +799,8 @@ h2{
 		@include breakpoint(phablet){
 			padding-bottom: 20px;
 		}
-		
-		
+
+
 	}
 	&__text{
 		margin-top: 25px;
@@ -814,10 +814,10 @@ h2{
 			@include breakpoint(phablet){
 				float: left;
 			}
-			
+
 			&.adress{
 				position:relative;
-				
+
 				&:before{
 					content: '';
 					display: inline-block;
@@ -857,8 +857,7 @@ h2{
 					left: -37px;
 					top: -10px;
 				}
-			}
-
+			} 
 		}
 		a{
 			margin: 5px 0;
@@ -867,11 +866,25 @@ h2{
 				margin-left: 75px;
 				margin-bottom: 15px;
 			}
-			
+
 		}
 	}
 }
-
+.footer__icon{
+	display: inline-block;
+	width: 27px;
+	height: 27px;
+	background: url(../images/footer_icons.png);
+	&_adress{
+		background-position: 0px 1px;
+	}
+	&_phone{
+		background-position: -26px 1px;
+	}
+	&_mail{
+		background-position: -56px 1px;
+	}
+}
 .mapwrapper{
 	position: relative;
 }
@@ -945,9 +958,4 @@ form{
 
 		}
 	}
-
-
-
 }
-
-
