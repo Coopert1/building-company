@@ -49,6 +49,8 @@ body{
 
 	}
 }
+
+
 .center{
 	text-align: center;
 }
@@ -343,6 +345,7 @@ body{
 	line-height: 70px;
 	border-radius: 30px;
 	text-align: center;
+	opacity: .7;
 	&:before,&:after{
 		content: "";
 		width: 13px;
@@ -359,6 +362,9 @@ body{
 		transform: rotate(-45deg);
 		left:32%;
 		
+	}
+	&:hover{
+		opacity: 1;
 	}
 }
 .btn{
@@ -542,13 +548,16 @@ body{
 						top: 60%;
 						transform: translateY(-50%);
 					}
+					&:before{
+						content: "Так";
+					}
 				}
 			}
 
 			&+label{
 				position: relative;
 				&:before{
-					content: "";
+					content: "Ні";
 					width: 90px;
 					height: 30px;
 					display: inline-block;
