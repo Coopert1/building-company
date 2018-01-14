@@ -134,10 +134,35 @@ $(function(){
 	}
 
 	// When the user clicks on the button, scroll to the top of the document
+
+
 	function topFunction() {
-		document.body.scrollTop = 0; // For Safari
-		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+		var val_scroll = document.body.scrollTop;
+		//var val_scroll_1 = document.documentElement.scrollTop;
+		
+		var time = 50;
+		var step = val_scroll/time;
+//		console.log(step);
+//		console.log(val_scroll);
+		
+		var timer = setInterval(function(){
+			
+			val_scroll = val_scroll - step;
+			
+			document.body.scrollTop = val_scroll; // For Safari
+			//document.documentElement.scrollTop = val_scroll_1; // For Chrome, Firefox, IE and Opera
+			
+			if (val_scroll <= 0){
+			
+				clearInterval(timer);
+				
+
+			}
+		}, (20));
+		
 	}
+
+	
 	
 	document.getElementById("btn__up").onclick = topFunction;
 	
