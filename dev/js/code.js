@@ -82,6 +82,7 @@ $(function(){
 		$( "ul" ).find('.active').removeClass('active');
 
 		if($("input[type='radio']").hasClass('act')){
+
 			$("input[type='radio']").click();
 		} else if($(this).prop('checked')){
 			$( "ul" ).find('.balcon_true').addClass('active');
@@ -103,7 +104,7 @@ $(function(){
 			$( "ul" ).find(cls).addClass('active act');
 		}
 	});
-	
+
 	// When the user scrolls down 480px from the top of the document, show the button
 	window.onscroll = function() {scrollFunction()};
 
@@ -121,45 +122,56 @@ $(function(){
 	function topFunction() {
 		var val_scroll = document.body.scrollTop;
 		//var val_scroll_1 = document.documentElement.scrollTop;
-		
+
 		var time = 50;
 		var step = val_scroll/time;
-//		console.log(step);
-//		console.log(val_scroll);
-		
 		var timer = setInterval(function(){
-			
 			val_scroll = val_scroll - step;
-			
 			document.body.scrollTop = val_scroll; // For Safari
 			//document.documentElement.scrollTop = val_scroll_1; // For Chrome, Firefox, IE and Opera
-			
 			if (val_scroll <= 0){
-			
 				clearInterval(timer);
-				
-
 			}
 		}, (20));
-		
 	}
-
-	
-	
 	document.getElementById("btn__up").onclick = topFunction;
-	
 
-	
+//slider
+	var Slider=$('#Slider').lightSlider({
+			item: 1,
+			slideMove:1,
+			loop:false,
+			controls:true,
+			slideMargin: 10,
+			autoWidth:false,
+	})
+
+
+//scroll
+$(".menu,.slide__info,.block__description").on("click","a", function (event) {
+	//отменяем стандартную обработку нажатия по ссылке
+	event.preventDefault();
+
+	//забираем идентификатор бока с атрибута href
+	var id  = $(this).attr('href'),
+
+	//узнаем высоту от начала страницы до блока на который ссылается якорь
+		top = $(id).offset().top;
+
+	//анимируем переход на расстояние - top за 1500 мс
+	$('body,html').animate({scrollTop: top}, 1500);
 });
-	
-	
-	
+
+});
 	function initMap() {
 		var uluru = {lat:48.9191304, lng: 24.7138400};
 		var mark_in_map = new google.maps.LatLng(48.9188881,24.7174895);
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 16,
-			center: uluru
+			center: uluru,
+			mapTypeControl: false,
+			fullscreenControl:false,
+			streetViewControl: false,
 		});
 		var marker = new google.maps.Marker({
 			position: mark_in_map,

@@ -20,6 +20,9 @@
 	img{
 		max-width: 100%;
 	}
+	a{
+		text-decoration: none;
+	}
 }
 body{
 	// background: #fafafa;
@@ -361,7 +364,7 @@ body{
 	&:before{
 		transform: rotate(-45deg);
 		left:32%;
-		
+
 	}
 	&:hover{
 		opacity: 1;
@@ -370,7 +373,7 @@ body{
 .btn{
 	display: inline-block;
 	padding: 10px;
-	
+
 	&__manager{
 		background: #0c2e3b;
 		color:#fff;
@@ -396,13 +399,27 @@ body{
 		}
 	}
 	&_slider{
-		background: none;
-		font-size: 18px;
-		border: 2px solid #fafafa;
-		text-transform: uppercase;;
+		background: #0c2e3b;
+		color:#fff;
+		font-size: 14px;
+		border-radius: 2px;
 		margin: 20px 0;
 		&:hover{
-			background: #fac012;
+			color:#fac012;
+		}
+		@include breakpoint(phablet){
+			background: none;
+			font-size: 15px;
+			border: 2px solid #fafafa;
+			text-transform: uppercase;
+				margin: 0;
+			&:hover{
+				background: #fac012;
+				color:#fff;
+			}
+		}
+		@include breakpoint(tablet){
+			font-size: 18px;
 		}
 	}
 	&_send{
@@ -450,7 +467,7 @@ body{
 				height: 15px;
 				display: inline-block;
 				border-radius: 15px;
-				border: 2px solid #d0d0d0;
+				border: 1px solid #d0d0d0;
 				vertical-align: middle;
 				cursor: pointer;
 				position: absolute;
@@ -469,7 +486,7 @@ body{
 						content: '';
 						width: 15px;
 						height: 15px;
-						border: 2px solid #d0d0d0;
+						border: 1px solid #d0d0d0;
 						display: inline-block;
 						border-radius: 15px;
 						vertical-align: middle;
@@ -486,7 +503,7 @@ body{
 				& + label{
 					&:after{
 						background-color: #fac012;
-						border: 2px solid #fac012;
+						border: 1px solid #fac012;
 					}
 				}
 			}
@@ -499,9 +516,9 @@ body{
 				&:before{
 					content: counter(number) " кім.";
 					counter-increment: number;
-					width: 90px;
+					width: 45px;
 					height: 30px;
-					border: 2px solid #d0d0d0;
+					border: 1px solid #d0d0d0;
 					display: inline-block;
 					border-radius: 15px;
 					vertical-align: middle;
@@ -562,7 +579,7 @@ body{
 					height: 30px;
 					display: inline-block;
 					border-radius: 15px;
-					border: 2px solid #d0d0d0;
+					border: 1px solid #d0d0d0;
 					vertical-align: middle;
 					cursor: pointer;
 					padding-left: 30px;
@@ -593,7 +610,7 @@ body{
 		font-weight: none;
 		height: 22px;
 		width: 22px;
-		border: 2px solid #d0d0d0;
+		border: 1px solid #d0d0d0;
 		line-height: 18px;
 		text-align: center;
 		margin: 2px;
@@ -689,22 +706,39 @@ h2{
 	background-size: cover;
 	text-align: center;
 	&__info{
+		width: 70%;
+		margin: 0 auto;
 		color: #000;
 		font-size: 18px;
 		margin-top: 20px;
+		&__text{
+			margin-bottom: 20px;
+		}
 	}
 	@include breakpoint(phablet){
 		&__info{
-		
-
 			position: absolute;
-			top:25%;
+			top:17%;
 			//left: 50%;
 			left: 0;
 			right: 0;
 			//display: inline-block;
 			color: #fff;
+			font-size: 18px;
+		}
+	}
+	@include breakpoint(tablet){
+		&__info{
+			position: absolute;
+			top:11%;
+			left: 50%;
+			right: 0;
+			width: 600px;
+			margin-left: -300px;
 			font-size: 25px;
+			&__title{
+				margin-bottom: 20px;
+			}
 		}
 	}
 }
@@ -814,7 +848,7 @@ h2{
 	@include breakpoint(phablet){
 		text-align: left;
 	}
-	
+
 	&__rights{
 		text-align: center;
 		padding: 30px 0;
@@ -829,7 +863,7 @@ h2{
 		@include breakpoint(phablet){
 			margin-bottom: 20px;
 		}
-		
+
 		&:hover{
 			color:#fac012;
 		}
@@ -842,8 +876,8 @@ h2{
 		@include breakpoint(phablet){
 			padding-bottom: 20px;
 		}
-		
-		
+
+
 	}
 	&__text{
 		margin-top: 25px;
@@ -857,10 +891,10 @@ h2{
 			@include breakpoint(phablet){
 				float: left;
 			}
-			
+
 			&.adress{
 				position:relative;
-				
+
 				&:before{
 					content: '';
 					display: inline-block;
@@ -901,7 +935,6 @@ h2{
 					top: -10px;
 				}
 			}
-
 		}
 		a{
 			margin: 5px 0;
@@ -910,11 +943,25 @@ h2{
 				margin-left: 75px;
 				margin-bottom: 15px;
 			}
-			
+
 		}
 	}
 }
-
+.footer__icon{
+	display: inline-block;
+	width: 27px;
+	height: 27px;
+	background: url(../images/footer_icons.png);
+	&_adress{
+		background-position: 0px 1px;
+	}
+	&_phone{
+		background-position: -26px 1px;
+	}
+	&_mail{
+		background-position: -56px 1px;
+	}
+}
 .mapwrapper{
 	position: relative;
 }
@@ -988,9 +1035,4 @@ form{
 
 		}
 	}
-
-
-
 }
-
-
